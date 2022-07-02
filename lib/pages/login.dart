@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:survey_app/routes/routes.dart';
+import 'package:survey_app/services/name_input_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,7 +11,21 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _controller = TextEditingController();
+  TextEditingController _controller = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  // @override
+  // void didChangeDependencies() {
+  //   _controller.addListener(() {
+  //     context.read<NameInputService>().text = _controller.text;
+  //   });
+  //   super.didChangeDependencies();
+  // }
 
   @override
   void dispose() {
@@ -55,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xff0444C0).withOpacity(0.2),
+                  color: const Color(0xff00828A).withOpacity(0.2),
                 ),
                 child: Row(
                   children: [
@@ -90,12 +106,13 @@ class _LoginPageState extends State<LoginPage> {
             GestureDetector(
               onTap: (() {
                 Navigator.of(context).pushNamed(RouteManager.startingPage);
+                context.read<NameInputService>().text = _controller.text;
               }),
               child: Container(
                 height: 50,
                 width: 150,
                 decoration: const BoxDecoration(
-                  color: Color(0xff0444C0),
+                  color: Color(0xff00828A),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
