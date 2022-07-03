@@ -32,7 +32,9 @@ class RouteManager {
           builder: ((context) => const QuestionPage()),
         );
       case resultPage:
-        return MaterialPageRoute(builder: (context) => const ResultPage());
+        return MaterialPageRoute(
+          builder: (context) => const ResultPage(),
+        );
       default:
         throw const FormatException('Route not found!, check routes again');
     }

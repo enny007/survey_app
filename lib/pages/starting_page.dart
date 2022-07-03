@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:survey_app/models/questionnaire.dart';
 import 'package:survey_app/routes/routes.dart';
 import 'package:survey_app/services/question_service.dart';
+import 'package:survey_app/utils/utils.dart';
 
 class StartingPage extends StatelessWidget {
   const StartingPage({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class StartingPage extends StatelessWidget {
               child: Text(
                 'Your opinion in few\nminutes.',
                 style: TextStyle(
-                    color: Color(0xff00828A),
+                    color: Utils.mainColor,
                     fontSize: 30,
                     fontWeight: FontWeight.bold),
               ),
@@ -69,8 +70,8 @@ class StartingPage extends StatelessWidget {
                         Questionnaire();
                   },
                   style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xff00828A))),
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Utils.mainColor)),
                   child: const Text(
                     'Start the survey',
                     style: TextStyle(
@@ -89,8 +90,8 @@ class StartingPage extends StatelessWidget {
                     BoxDecoration(borderRadius: BorderRadius.circular(25)),
                 child: ElevatedButton(
                   style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xff00828A))),
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Utils.mainColor)),
                   onPressed: () {
                     Navigator.of(context).pushNamed(RouteManager.loginPage);
                   },

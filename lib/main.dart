@@ -5,6 +5,7 @@ import 'package:survey_app/routes/routes.dart';
 import 'package:survey_app/services/name_input_service.dart';
 
 import 'package:survey_app/services/question_service.dart';
+import 'package:survey_app/utils/utils.dart';
 
 void main() {
   runApp(
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Color(0xff00828A),
+        statusBarColor: Utils.mainColor,
         statusBarBrightness: Brightness.light));
     return MultiProvider(
       providers: [
@@ -33,9 +34,6 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: ThemeData(
             brightness: Brightness.light,
-            colorScheme: const ColorScheme.light(
-              secondary: Color(0xff0444C0),
-            ),
             backgroundColor: Colors.white,
           ),
           debugShowCheckedModeBanner: false,

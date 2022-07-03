@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:survey_app/routes/routes.dart';
 import 'package:survey_app/services/name_input_service.dart';
+import 'package:survey_app/utils/utils.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -18,14 +19,6 @@ class _LoginPageState extends State<LoginPage> {
     super.initState();
     _controller = TextEditingController();
   }
-
-  // @override
-  // void didChangeDependencies() {
-  //   _controller.addListener(() {
-  //     context.read<NameInputService>().text = _controller.text;
-  //   });
-  //   super.didChangeDependencies();
-  // }
 
   @override
   void dispose() {
@@ -53,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: const Color(0xff0444C0).withOpacity(0.2),
+                      color: Utils.secondaryColor,
                       width: 3,
                     ),
                   ),
@@ -71,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xff00828A).withOpacity(0.2),
+                  color: Utils.secondaryColor,
                 ),
                 child: Row(
                   children: [
@@ -111,9 +104,9 @@ class _LoginPageState extends State<LoginPage> {
               child: Container(
                 height: 50,
                 width: 150,
-                decoration: const BoxDecoration(
-                  color: Color(0xff00828A),
-                ),
+                decoration: BoxDecoration(
+                    color: Utils.mainColor,
+                    borderRadius: BorderRadius.circular(25)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -123,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                       size: 30,
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 10,
                     ),
                     Text(
                       'Login',

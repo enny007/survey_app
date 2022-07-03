@@ -41,7 +41,7 @@ class Questionnaire {
       ],
     ),
     QuestionModel(
-      'How much do you earn weekly',
+      'How much do you earn weekly?',
       [
         "0 - 1000",
         "1000 - 5000",

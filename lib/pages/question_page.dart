@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:survey_app/routes/routes.dart';
 import 'package:survey_app/services/question_service.dart';
+import 'package:survey_app/utils/utils.dart';
 
 class QuestionPage extends StatefulWidget {
   const QuestionPage({Key? key}) : super(key: key);
@@ -16,11 +17,11 @@ class _QuestionPageState extends State<QuestionPage> {
 
   // ignore: prefer_final_fields
   PageController? _controller = PageController(initialPage: 0);
-  Color bottonColor = Colors.white;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff00828A).withOpacity(0.7),
+      backgroundColor: Utils.tertiaryColor,
       body: Padding(
         padding: const EdgeInsets.all(18),
         child: Consumer<QuestionService>(
@@ -76,7 +77,7 @@ class _QuestionPageState extends State<QuestionPage> {
                                         .selectedAnswer ==
                                     i
                                 ? Colors.yellow
-                                : bottonColor,
+                                : Utils.bottonColor,
                             padding: const EdgeInsets.symmetric(vertical: 18),
                             onPressed: () {
                               context
@@ -136,12 +137,6 @@ class _QuestionPageState extends State<QuestionPage> {
                                           return AlertDialog(
                                             actions: [
                                               TextButton(
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                },
-                                                child: const Text('NO'),
-                                              ),
-                                              TextButton(
                                                   onPressed: () {
                                                     Navigator.of(context)
                                                         .pushNamed(RouteManager
@@ -150,7 +145,23 @@ class _QuestionPageState extends State<QuestionPage> {
                                                         .read<QuestionService>()
                                                         .currentQuestionnaire;
                                                   },
-                                                  child: const Text('YES'))
+                                                  child: const Text(
+                                                    'YES',
+                                                    style: TextStyle(
+                                                        color: Utils.mainColor,
+                                                        fontSize: 20),
+                                                  )),
+                                              TextButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: const Text(
+                                                  'NO',
+                                                  style: TextStyle(
+                                                      color: Utils.mainColor,
+                                                      fontSize: 20),
+                                                ),
+                                              ),
                                             ],
                                             content: const Text(
                                                 'Are you sure you want to submit this survey?'),

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:survey_app/routes/routes.dart';
 import 'package:survey_app/services/name_input_service.dart';
 import 'package:survey_app/services/question_service.dart';
+import 'package:survey_app/utils/utils.dart';
 
 class ResultPage extends StatelessWidget {
   const ResultPage({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xff00828A).withOpacity(0.7),
+        backgroundColor: Utils.tertiaryColor,
         body: SafeArea(
           child: Center(
             child: Column(
@@ -24,7 +25,7 @@ class ResultPage extends StatelessWidget {
                         return Text(
                           'Your Survey Result, ${value.text}:',
                           style: const TextStyle(
-                              fontSize: 30,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
                         );
@@ -77,7 +78,7 @@ class ResultPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 15, bottom: 15),
                   child: FloatingActionButton(
-                    backgroundColor: const Color(0xff00828A),
+                    backgroundColor: Utils.mainColor,
                     child: const Icon(
                       Icons.edit,
                       color: Colors.white,

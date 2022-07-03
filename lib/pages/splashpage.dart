@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:survey_app/routes/routes.dart';
+import 'package:survey_app/utils/utils.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class SplashPage extends StatelessWidget {
       Navigator.of(context).pushNamed(RouteManager.loginPage);
     });
     return Scaffold(
-      backgroundColor: const Color(0xff00828A),
+      backgroundColor: Utils.mainColor,
       body: Stack(
         children: [
           Padding(
