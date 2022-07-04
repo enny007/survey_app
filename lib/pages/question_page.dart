@@ -12,9 +12,6 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
-  // create an object of the questionnaire class, without initialization, it is null
-  // when you want to have multiple surveys, you abstract
-
   // ignore: prefer_final_fields
   PageController? _controller = PageController(initialPage: 0);
 
