@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:survey_app/providers/name_input_service.dart';
+import 'package:survey_app/providers/question_service.dart';
 import 'package:survey_app/routes/routes.dart';
-import 'package:survey_app/services/name_input_service.dart';
 
-import 'package:survey_app/services/question_service.dart';
 import 'package:survey_app/utils/utils.dart';
 
 void main() {

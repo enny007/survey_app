@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:survey_app/routes/routes.dart';
-import 'package:survey_app/services/name_input_service.dart';
-import 'package:survey_app/services/question_service.dart';
+
 import 'package:survey_app/utils/utils.dart';
+
+import '../providers/name_input_service.dart';
+import '../providers/question_service.dart';
 
 class ResultPage extends StatelessWidget {
   const ResultPage({Key? key}) : super(key: key);

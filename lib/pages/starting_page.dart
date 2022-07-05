@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:survey_app/models/questionnaire.dart';
 import 'package:survey_app/routes/routes.dart';
-import 'package:survey_app/services/question_service.dart';
+
 import 'package:survey_app/utils/utils.dart';
+
+import '../providers/question_service.dart';
 
 class StartingPage extends StatelessWidget {
   const StartingPage({Key? key}) : super(key: key);
